@@ -17,17 +17,29 @@ class Background extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           Positioned(
-            top: 35, 
+            top: 35,
             left: 0,
-            child: Icon(IconData(0x1F4A7),
-            size: 80,),
+            child: Icon(
+              IconData(0x1F4A7),
+              size: 80,
+            ),
           ),
           Positioned(
-            top: 180, 
+            top: 180,
             left: 0,
-            child: Icon(IconData(0x1F321),
-            size: 80,),
-          )
+            child: Icon(
+              IconData(0x1F321),
+              size: 80,
+            ),
+          ),
+          Positioned(
+            top: 180,
+            left: 0,
+            child: Icon(
+              IconData(0x1F321),
+              size: 80,
+            ),
+          ),
         ],
       ),
     );
