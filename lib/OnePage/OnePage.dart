@@ -23,17 +23,16 @@ class _OnePageState extends State<OnePage> {
           crossAxisCount: 2,
           childAspectRatio: 8 / 8,
           children: <Widget>[
-            new InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => TwoPage()));
-              },
-              child: new Container(
-                padding: new EdgeInsets.all(8),
-                child: const Text("He'd have you all unravel at the"),
-                color: Colors.teal[500],
+            new Container(
+              padding: new EdgeInsets.all(8),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => TwoPage()));
+                },
+                child: Text("He'd have you all unravel at the"),
               ),
-              
+              color: Colors.teal[500],
             ),
           ],
         ),
