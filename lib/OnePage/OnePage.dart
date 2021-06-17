@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
+import 'package:flutter_auth/TwoPage/TwoPage.dart';
 
 class OnePage extends StatefulWidget {
   @override
@@ -7,14 +8,6 @@ class OnePage extends StatefulWidget {
 }
 
 class _OnePageState extends State<OnePage> {
-  // int _counter = 1;
-
-  // void _incrementCounter() {
-  //   setState(() {
-  //     _counter++;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,15 +23,17 @@ class _OnePageState extends State<OnePage> {
           crossAxisCount: 2,
           childAspectRatio: 8 / 8,
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text("He'd have you all unravel at the"),
-              color: Colors.teal[100],
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-              child: const Text('Heed not the rabble'),
-              color: Colors.teal[200],
+            new InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TwoPage()));
+              },
+              child: new Container(
+                padding: new EdgeInsets.all(8),
+                child: const Text("He'd have you all unravel at the"),
+                color: Colors.teal[500],
+              ),
+              
             ),
           ],
         ),
