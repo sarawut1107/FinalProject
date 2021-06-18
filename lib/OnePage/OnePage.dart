@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/TwoPage/TwoPage.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnePage extends StatefulWidget {
+  static const String routename = "onepage";
   @override
   _OnePageState createState() => _OnePageState();
 }
@@ -10,6 +12,9 @@ class OnePage extends StatefulWidget {
 class _OnePageState extends State<OnePage> {
   @override
   Widget build(BuildContext context) {
+    TextStyle bulletStyle = GoogleFonts.baiJamjuree(
+      fontSize: 20,
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text("สถานะการเลี้ยง"),
@@ -30,9 +35,14 @@ class _OnePageState extends State<OnePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => TwoPage()));
                 },
-                child: Text("He'd have you all unravel at the"),
+                child: Center(
+                  child: Text(
+                    "กล่องที่1",
+                    style: bulletStyle,
+                  ),
+                ),
               ),
-              color: Colors.teal[500],
+              color: Colors.amber[200],
             ),
           ],
         ),
