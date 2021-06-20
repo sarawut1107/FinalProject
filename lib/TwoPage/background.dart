@@ -84,23 +84,6 @@ class Background extends StatelessWidget {
           ),
           // แสดงค่าตัวเลข
 
-          //Logout
-          Positioned(
-              top: 690,
-              left: 25,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  primary: Colors.redAccent, // foreground
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()));
-                },
-                child: Text(
-                  'Log Out ',
-                  style: contentBulletStyle,
-                ),
-              )),
           //แสดงวันที่เลี้ยง
           Positioned(
             top: 700,
