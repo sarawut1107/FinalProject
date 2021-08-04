@@ -27,7 +27,7 @@ class _TwoPageState extends State<TwoPage> {
   }
 
   TextStyle contentBulletStyle = GoogleFonts.prompt(
-    fontSize: 20,
+    fontSize: 17,
   );
 
   @override
@@ -53,22 +53,22 @@ class _TwoPageState extends State<TwoPage> {
               child: Stack(
                 alignment: Alignment.center,
                 children: <Widget>[
-                  // Positioned(
-                  //   top: 40,
-                  //   left: 20,
-                  //   child: Icon(
-                  //     IconData(0x1F35A),
-                  //     size: 80,
-                  //   ),
-                  // ),
-                  // Positioned(
-                  //   top: 145,
-                  //   left: 40,
-                  //   child: Text(
-                  //     "อาหาร = ${_data["food"]} ",
-                  //     style: contentBulletStyle,
-                  //   ),
-                  // ),
+                  Positioned(
+                    top: 40,
+                    left: 20,
+                    child: Icon(
+                      IconData(0x1F35A),
+                      size: 80,
+                    ),
+                  ),
+                  Positioned(
+                    top: 145,
+                    left: 40,
+                    child: Text(
+                      "อาหาร = ${_data["food"]} ",
+                      style: contentBulletStyle,
+                    ),
+                  ),
                   Positioned(
                     top: 200,
                     left: 20,
@@ -87,7 +87,7 @@ class _TwoPageState extends State<TwoPage> {
                   ),
 
                   Positioned(
-                    top: 40,
+                    top: 520,
                     left: 20,
                     child: Icon(
                       IconData(0x1F39A),
@@ -95,7 +95,7 @@ class _TwoPageState extends State<TwoPage> {
                     ),
                   ),
                   Positioned(
-                    top: 145,
+                    top: 620,
                     left: 15,
                     child: Text(
                       "ความชื้นอากาศ = ${_data["moisture"]} ",
@@ -115,6 +115,22 @@ class _TwoPageState extends State<TwoPage> {
                     left: 35,
                     child: Text(
                       "อุณหภูมิ = ${_data["temperature"]} องศา",
+                      style: contentBulletStyle,
+                    ),
+                  ),
+                  Positioned(
+                    top: 40,
+                    right: 70,
+                    child: Icon(
+                      IconData(0x1F39A),
+                      size: 80,
+                    ),
+                  ),
+                  Positioned(
+                    top: 145,
+                    right: 0,
+                    child: Text(
+                      "ความชื้นอากาศ = ${_data["moisture"]} ",
                       style: contentBulletStyle,
                     ),
                   ),
