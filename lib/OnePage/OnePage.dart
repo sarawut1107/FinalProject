@@ -6,6 +6,7 @@ import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/TwoPage/TwoPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class OnePage extends StatefulWidget {
   static const String routename = "onepage";
@@ -14,8 +15,13 @@ class OnePage extends StatefulWidget {
 }
 
 class _OnePageState extends State<OnePage> {
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  var recentJobsRef = FirebaseDatabase.instance
+      .reference()
+      .child('recent')
+      .orderByChild('created_at')
+      .limitToFirst(10);
   FirebaseAuth auth = FirebaseAuth.instance;
+  final firestore = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
     TextStyle bulletStyle = GoogleFonts.baiJamjuree(
@@ -47,20 +53,22 @@ class _OnePageState extends State<OnePage> {
             ],
           ),
         ),
+       
         body: Background(
             child: StreamBuilder<QuerySnapshot>(
           stream: firestore
-              .collection('esp')
-              .where("userID", isEqualTo: '001')
+              .collection('boxs')
+              .where("uid", isEqualTo: auth.currentUser.uid)
               .snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return SizedBox();
+              return SizedBox();}
               // ignore: dead_code
               final data = snapshot.data?.docs
                   ?.map((e) => e.data() as Map<String, dynamic>)
                   ?.toList();
-              print(data);
+                  
+
               return GridView.count(
                 primary: false,
                 padding: const EdgeInsets.all(20),
@@ -69,16 +77,17 @@ class _OnePageState extends State<OnePage> {
                 crossAxisCount: 2,
                 childAspectRatio: 8 / 8,
                 children: <Widget>[
-                  new Container(
+                  for (var i = 0; i < data.length; i++)
+                   Container(
                     padding: new EdgeInsets.all(8),
                     child: InkWell(
                       onTap: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => TwoPage()));
+                            MaterialPageRoute(builder: (context) => TwoPage(data: data[i],)));
                       },
                       child: Center(
                         child: Text(
-                          "กล่องที่1",
+                          "กล่องที่ ${i+1}",
                           style: bulletStyle,
                         ),
                       ),
@@ -103,10 +112,10 @@ class _OnePageState extends State<OnePage> {
                   ),
                 ],
               );
-            } else {
-              return SizedBox();
-            }
+
           },
-        )));
+        )
+        ),
+        );
   }
 }

@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "279057798030",
-    "project_id": "finalproject-2b9ad",
-    "storage_bucket": "finalproject-2b9ad.appspot.com"
+    "project_number": "321319096996",
+    "firebase_url": "https://final-sarawut-default-rtdb.firebaseio.com",
+    "project_id": "final-sarawut",
+    "storage_bucket": "final-sarawut.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:279057798030:android:c5b02e90c15049313b0adf",
+        "mobilesdk_app_id": "1:321319096996:android:a788b29d4601a1ff790c31",
         "android_client_info": {
           "package_name": "com.example.flutter_auth"
         }
       },
       "oauth_client": [
         {
-          "client_id": "279057798030-jj4h6iggrq5bc923pluofge1ib94q3ul.apps.googleusercontent.com",
+          "client_id": "321319096996-t885rsek5t569qb9bl10t60jnulogba1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDYLcpn7zaMunj5NF8XA33HcDiRqlHCj4Q"
+          "current_key": "AIzaSyCg-sEnT0EZC2VJvJwg3pmzd54UxIz9n0k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "279057798030-jj4h6iggrq5bc923pluofge1ib94q3ul.apps.googleusercontent.com",
+              "client_id": "321319096996-t885rsek5t569qb9bl10t60jnulogba1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
