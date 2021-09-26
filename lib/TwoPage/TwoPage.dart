@@ -118,22 +118,7 @@ class _TwoPageState extends State<TwoPage> {
                       style: contentBulletStyle,
                     ),
                   ),
-                  Positioned(
-                    top: 40,
-                    right: 70,
-                    child: Icon(
-                      IconData(0x1F39A),
-                      size: 80,
-                    ),
-                  ),
-                  Positioned(
-                    top: 145,
-                    right: 0,
-                    child: Text(
-                      "ความชื้นอากาศ = ${_data["moisture"]} ",
-                      style: contentBulletStyle,
-                    ),
-                  ),
+
                   // แสดงค่าตัวเลข
 
                   //แสดงวันที่เลี้ยง
